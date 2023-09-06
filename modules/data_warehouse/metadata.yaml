@@ -19,10 +19,16 @@ metadata:
   annotations:
     config.kubernetes.io/local-config: "true"
 spec:
+  orchestration:
+    post:
+      name: "post"
+      image: "gcr.io/cloud-builders/gsutil"
+      entrypoint: "bash"
+      args: ["./modules/data_warehouse/post.sh"]
   info:
     title: terraform-google-bigquery-data-warehouse
     source:
-      repo: https://github.com/terraform-google-modules/terraform-google-bigquery
+      repo: https://github.com/bharathkkb/terraform-google-bigquery
       sourceType: git
       dir: /modules/data_warehouse
     version: 6.1.0

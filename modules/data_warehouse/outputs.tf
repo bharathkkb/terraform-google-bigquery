@@ -38,3 +38,7 @@ output "neos_tutorial_url" {
   value       = "https://console.cloud.google.com/products/solutions/deployments?walkthrough_id=panels--sic--data-warehouse_toc"
   description = "The URL to launch the in-console tutorial for the EDW solution"
 }
+
+output "workflow_id" {
+  value = google_workflows_workflow.workflow.id
+}
